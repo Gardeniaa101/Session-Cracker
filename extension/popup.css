@@ -1,0 +1,159 @@
+:root {
+  --accent: #d97757;
+  --warning: #e5a844;
+  --danger: #e05252;
+  --text: color-mix(in srgb, currentColor 87%, transparent);
+  --text-secondary: color-mix(in srgb, currentColor 55%, transparent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 300px;
+  min-height: 220px;
+  margin: 0;
+  padding: 16px;
+  background: transparent;
+  color: CanvasText;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#app {
+  color: var(--text);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status-dot {
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.status-dot.idle {
+  color: var(--text-secondary);
+}
+
+.progress-wrap {
+  display: grid;
+  place-items: center;
+  margin: 4px 0 12px;
+}
+
+.progress {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.progress-track,
+.progress-value {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.progress-track {
+  stroke: color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.progress-value {
+  stroke: var(--accent);
+  transition: stroke-dasharray 180ms ease, stroke 180ms ease;
+}
+
+.progress-value.warning {
+  stroke: var(--warning);
+}
+
+.progress-value.danger {
+  stroke: var(--danger);
+}
+
+.usage-text,
+.no-usage,
+.idle-message {
+  margin: 0 0 10px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-align: center;
+}
+
+.no-usage {
+  display: grid;
+  place-items: center;
+  min-height: 88px;
+  font-weight: 700;
+}
+
+.countdown {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.reset-time {
+  margin: 6px 0 14px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-align: center;
+}
+
+.divider {
+  height: 1px;
+  margin: 14px 0;
+  background: color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.weekly {
+  color: var(--text-secondary);
+  font-size: 13px;
+  text-align: center;
+}
+
+.notice {
+  margin: 14px 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--warning) 15%, transparent);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.footer {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.settings-link {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.settings-link:hover {
+  color: var(--accent);
+}
+
+.idle-card {
+  display: grid;
+  min-height: 170px;
+  align-content: center;
+}
